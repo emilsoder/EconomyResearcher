@@ -1,0 +1,25 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EconomyResearcher"
+        xmlns:Data_Layer="clr-namespace:EconomyResearcher.Data_Layer" x:Class="EconomyResearcher.View"
+        mc:Ignorable="d"
+        Title="View" Height="458.333" Width="580.208">
+
+    <Grid>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Width="132" Margin="10,10,0,0" Text="Countries" Height="22" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.496">
+
+            <Button Cursor="Arrow" Content="United States" x:Name="btnGermany" Width="121" Click="btnUSA_Click"/>
+            <Button Cursor="Arrow" Content="United Kingdom" x:Name="btnQuandlUK" Width="121" Click="btnUK_Click"/>
+            <Button Cursor="Arrow" Content="China" x:Name="btnSweden" Width="121" Click="btnChina_Click"/>
+        </ComboBox>
+        <DataGrid x:Name="dataGrid" Margin="10,37,10,10" CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding DataItems}" CanUserSortColumns="False" BorderBrush="Gray" IsReadOnly="True" VerticalGridLinesBrush="LightGray" HorizontalGridLinesBrush="Gray">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" IsReadOnly="True" Binding="{Binding Path=Date}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Value" IsReadOnly="True"  Binding="{Binding Path=Value}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
