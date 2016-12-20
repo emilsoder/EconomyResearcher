@@ -11,7 +11,6 @@ namespace EconomyResearcher
     public partial class View : Window, IView
     {
         private Presenter p;
-
         public View()
         {
             InitializeComponent();
@@ -37,38 +36,15 @@ namespace EconomyResearcher
             p.GetDataUK();
         }
 
-        public void SetDataGridItems(DataItems items)
+        public DataItems DataGridItems
         {
-            dataGrid.Items.Add(items);
+            set { dataGrid.Items.Add(value); }
         }
 
         public string ComboBoxText
         {
-            get
-            {
-                return comboBox.Text;
-            }
-            set
-            {
-                comboBox.Text = value;
-            }
+            get { return comboBox.Text; }
+            set { comboBox.Text = value; }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

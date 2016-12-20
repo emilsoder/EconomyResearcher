@@ -12,7 +12,7 @@ namespace EconomyResearcher
             this._uri = _uri;
             m = _m;
         }
-
+        
         public string _Uri
         {
             get

@@ -1,6 +1,4 @@
 using System;
-using System.Linq;
-using System.Collections.Generic;
 using RestSharp;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
@@ -31,13 +29,8 @@ namespace EconomyResearcher.Model_Layer
             var data = await getDataArgs.M.GetDataAsync(getDataArgs._Uri);
             foreach (var item in data.Dataset.Data)
             {
-                var items = new DataItems()
-                {
-                    Date = item[0],
-                    Value = item[1]
-                };
-
-                view.SetDataGridItems(items);
+                DataItems items = DataItems.GetItems(item);
+                view.DataGridItems = items;
             }
         }
     }

@@ -8,6 +8,6 @@ namespace EconomyResearcher
     public interface IView
     {
         string ComboBoxText { get; set; }
-        void SetDataGridItems(DataItems items);
+        DataItems DataGridItems { set; }
     }
 }
